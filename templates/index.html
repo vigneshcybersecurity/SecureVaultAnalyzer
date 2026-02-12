@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SecureVault Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>SecureVault Analyzer</h1>
+    <a href="{{ url_for('scan') }}" class="scan-btn">Run System Scan</a>
+
+    <h2>Alerts</h2>
+    {% if alerts %}
+    <ul class="alerts-list">
+      {% for alert in alerts %}
+      <li>{{ alert }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No alerts found.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
